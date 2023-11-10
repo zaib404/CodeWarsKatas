@@ -2,14 +2,20 @@
 {
   Katas katas = new();
 
-  private static void Main(string[] args)
+  public static void Main(string[] args)
   {
+    Program program = new Program();
+    program.Run();
+  }
 
+  void Run()
+  {
+    Order();
   }
 
   void Order()
   {
-    string words = "Welcome";
+    string words = "is2 Thi1s T4est 3a";
 
     words = katas.Order(words);
 

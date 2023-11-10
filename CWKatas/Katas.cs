@@ -7,9 +7,25 @@ public class Katas
 
     public string Order(string words)
     {
-        string rtnWords = "";
+        // return if empty
+        if (string.IsNullOrEmpty(words))
+        {
+            return words;
+        }
+
+        List<string> rtnWords = new List<string>();
+        // split into list
+        List<string> wordList = words.Split(' ').ToList();
         
-        return rtnWords;
+        for (int i = 1; i <= wordList.Count; i++)
+        {
+            string stringNum = i.ToString();
+            // covert to string find based on i
+            string match = wordList.Find(x => x.Contains(stringNum));
+            rtnWords.Add(match);
+        }
+        
+        return string.Join(" ", rtnWords);
     }
 
     public string SpinWords(string sentence)
